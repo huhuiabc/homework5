@@ -52,4 +52,16 @@ public class luhn {
         return sum % 10 == 0;
     }
 
+    private static int getCheck(Integer[] digits) {
+        int sum = 0;
+        int length = digits.length;
+        for (int i = 0; i < length; i++) {
+            int digit = digits[length - i - 1];
+            if (i % 2 == 0) {
+                digit *= 2;
+            }
+            sum += digit > 9 ? digit - 9 : digit;
+        }
+        return sum * 9 % 10;
+    }
 }
