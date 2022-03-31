@@ -14,10 +14,17 @@ public class luhn {
         }
     }
 
+    public static String addCheck(String digits){
+        return digits+getCheck(digits);
+    }
+
     private static boolean check(String digits) {
         return check(numStringToArray(digits));
     }
 
+    private static int getCheck(String digits) {
+        return getCheck(numStringToArray(digits));
+    }
 
     private static Integer[] numStringToArray(String numStr){
         byte[] bytes=numStr.getBytes();
